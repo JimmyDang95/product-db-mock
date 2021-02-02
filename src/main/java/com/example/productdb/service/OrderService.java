@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.productdb.db.OrderDb;
 import com.example.productdb.db.ProductDb;
 import com.example.productdb.models.Order;
+import com.example.productdb.models.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,13 +22,15 @@ public class OrderService {
     }
 
     public List<Order> getOrderList(){
-
         return orderServiceOrderDb.getOrderList();
     }
 
     public Order addOrder(@RequestBody Order newOrder){
-
         return orderServiceOrderDb.addOrder(newOrder);
+    }
+
+    public List<Product> getAvailableProducts(){
+        return orderServiceProductDb.getProductList();
     }
 
 

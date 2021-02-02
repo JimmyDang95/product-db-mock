@@ -37,7 +37,11 @@ public class OrderController {
 
     @PutMapping
     public Order addOrder(@RequestBody Order newOrder){
-
         return orderService.addOrder(newOrder);
+    }
+
+    @GetMapping("availableproducts")
+    public List<Product> getAvailableProducts(){
+        return orderService.getAvailableProducts();
     }
 }
