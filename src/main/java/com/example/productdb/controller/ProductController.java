@@ -2,7 +2,7 @@ package com.example.productdb.controller;
 
 import com.example.productdb.db.ProductDb;
 import com.example.productdb.models.Product;
-import com.example.productdb.service.OrderService;
+import com.example.productdb.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,17 +12,17 @@ import java.util.List;
 @RequestMapping("product")
 public class ProductController {
 
-    private final OrderService orderService  = new OrderService(new ProductDb());
+    private final ProductService productService  = new ProductService(new ProductDb());
 
     @GetMapping("productlist")
     public List<Product> getProductList(){
-        return orderService.getProductList();
+        return productService.getProductList();
     }
 
     @PutMapping
     public Product addProduct(@RequestBody Product newProduct){
 
-        return orderService.addProduct(newProduct);
+        return productService.addProduct(newProduct);
     }
 
 }
