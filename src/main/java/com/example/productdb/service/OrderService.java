@@ -1,32 +1,33 @@
 package com.example.productdb.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.example.productdb.db.OrderDb;
 import com.example.productdb.db.ProductDb;
-import com.example.productdb.models.Product;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import com.example.productdb.models.Order;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+@Service
 public class OrderService {
 
     private final ProductDb orderServiceProductDb;
+    private final OrderDb orderServiceOrderDb;
 
-
-    public OrderService(ProductDb orderServiceProductDb) {
+    public OrderService(ProductDb orderServiceProductDb,
+                        OrderDb orderServiceOrderDb) {
         this.orderServiceProductDb = orderServiceProductDb;
+        this.orderServiceOrderDb = orderServiceOrderDb;
     }
 
-    public List<Product> getProductList(){
+    public List<Order> getOrderList(){
 
-        return orderServiceProductDb.getProductList();
+        return orderServiceOrderDb.getOrderList();
     }
 
-    public Product addProduct(@RequestBody Product newProduct){
+    public Order addOrder(@RequestBody Order newOrder){
 
-        return orderServiceProductDb.addProduct(newProduct);
+        return orderServiceOrderDb.addOrder(newOrder);
     }
 
 
