@@ -13,7 +13,6 @@ public class OrderDb {
     private ArrayList<Order> orderList = new ArrayList<>();
 
     public List<Order> getOrderList(){
-
         return orderList;
     }
 
