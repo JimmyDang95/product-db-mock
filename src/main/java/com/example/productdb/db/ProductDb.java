@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public class ProductDb {
 
-
+    //vordefinierte Db
     private List<Product> productList = new ArrayList<>(List.of(
             new Product("1", "Apple"),
             new Product("2", "Peach")
@@ -19,7 +19,8 @@ public class ProductDb {
 
     public List<Product> getProductList(){
 
-        return productList;
+       return productList;
+
     }
 
     public Product addProduct(@RequestBody Product newProduct){

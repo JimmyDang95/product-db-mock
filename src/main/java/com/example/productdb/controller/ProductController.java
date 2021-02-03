@@ -45,7 +45,7 @@ public class ProductController {
         if(productOptional.isPresent()){
             return productOptional.get();
         }
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "product with product id " + productId + " does not exist");
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "product with product id " + productId + " does not exist");
     }
 
 

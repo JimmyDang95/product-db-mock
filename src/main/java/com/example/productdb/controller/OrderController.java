@@ -15,18 +15,16 @@ import java.util.List;
 public class OrderController {
 
 
-    private final ProductDb productDb;
+    //private final ProductDb productDb;
     //= new ProductDb();
-    private final OrderDb orderDb;
+    // private final OrderDb orderDb;
     //= new OrderDb();
     private final OrderService orderService;
     //= new OrderService(productDb, orderDb);
 
 
     @Autowired
-    public OrderController(ProductDb productDb, OrderDb orderDb, OrderService orderService) {
-        this.productDb = productDb;
-        this.orderDb = orderDb;
+    public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
 

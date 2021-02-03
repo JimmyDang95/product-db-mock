@@ -19,12 +19,12 @@ public class ProductService {
         this.orderServiceProductDb = orderServiceProductDb;
     }
 
-    public List<Product> getProductList(){
+    public List<Product> getProductList() {
 
-        return orderServiceProductDb.getProductList();
+       return orderServiceProductDb.getProductList();
     }
 
-    public Product addProduct(@RequestBody Product newProduct){
+    public Product addProduct(@RequestBody Product newProduct) {
 
         return orderServiceProductDb.addProduct(newProduct);
     }
@@ -32,7 +32,7 @@ public class ProductService {
     public List<Product> searchProducts(String search) {
         ArrayList<Product> searchList = new ArrayList<>();
         for (Product product : orderServiceProductDb.getProductList()) {
-            if(product.getProductName().contains(search)){
+            if (product.getProductName().contains(search)) {
                 searchList.add(product);
             }
         }
@@ -40,8 +40,8 @@ public class ProductService {
     }
 
     public Optional<Product> getProductById(String productId) {
-        for (Product product : orderServiceProductDb.getProductList()){
-            if ((product.getProductId()).equals(productId)){
+        for (Product product : orderServiceProductDb.getProductList()) {
+            if ((product.getProductId()).equals(productId)) {
                 return Optional.of(product);
             }
         }
